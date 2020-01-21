@@ -1,14 +1,48 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
-    </h:body>
-</html>
+    <body>
+        <ui:composition template="template.xhtml">
 
+            <ui:define name="top">
+                <h2>Welcome to our Site</h2>
+            </ui:define>
+
+            <ui:define name="left">
+                <h3>Links</h3>
+                <u1>
+                    <li>
+                        <h:outputLink value="https://youtu.be/z0xHep1R0UE?list=PLZuYFm90gG3xKEwgiW-uJhE-xC89mGU1T">
+                            <h:outputText value="Packt Publishing"/>
+                        </h:outputLink>
+                    </li>
+
+                    <li>
+                        <h:outputLink value="https://discordapp.com/">
+                            <h:outputText value="Discord"/>
+                        </h:outputLink>    
+                    </li>
+                    
+                    <li>
+                        <h:outputLink value="https://gamepress.gg/feheroes/hero/cordelia/">
+                        <h:outputText value="Cordelia"/>
+                        </h:outputLink>    
+                    </li>
+                </u1>
+            </ui:define>
+
+            <ui:define name="content">
+                <p>
+                    In this main area we would put our main text, images, forms, etc.
+                </p>
+                <p>
+                    Lorem ipsum eleifend donec pretium varius aliquam himenaeos ullamcorper sed malesuada sollicitudin imperdiet, urna lacus eleifend mi ultricies eleifend feugiat mattis blandit elit. sagittis dolor tellus et aliquet aliquam lectus euismod pulvinar rutrum, turpis ante cursus fringilla inceptos porta vivamus inceptos non vulputate, sagittis aenean praesent laoreet donec dui lacinia bibendum. congue tellus cubilia suscipit taciti fermentum velit purus mi quam ut condimentum turpis, luctus consequat morbi pretium dui nulla arcu nulla ac consectetur curae tortor, aliquam leo metus tortor habitant fringilla volutpat accumsan sociosqu felis posuere. duis nullam molestie ullamcorper taciti aenean magna inceptos congue dictumst convallis commodo at, sollicitudin curae facilisis ullamcorper tortor erat ut sem nunc lorem nam.                  
+                </p>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
