@@ -4,6 +4,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
+
     <body>
         <ui:composition template="template.xhtml">
 
@@ -35,6 +36,175 @@
             </ui:define>
 
             <ui:define name="content">
+
+                 <p:growl id="growl" sticky="true" showDetail="true"/>
+                 <h:form>
+                    <p:wizard flowListener="#{userWizard.onFlowProcess}">
+                        <p:tab id="customer" title="Customer Details">
+                            <p:panel header="Customer Details">
+                                <p:messages />
+                                <h:panelGrid columns="2" columnClasses="label, value">
+                                    <h:outputText value="Firstname: *" />
+                                    <p:inputText value="#{userWizard.user.firstName}" required="true" label="Firstname"/>
+
+                                    <h:outputText value="Lastname: *" />
+                                    <p:inputText value="#{userWizard.user.lastName}" required="true" label="Lastname"/>
+
+                                    <h:outputText value="Age: " />
+                                    <p:inputText value="#{userWizard.user.age}" />
+
+                                    <h:outputText value="Birthday: " />
+                                    <p:inputText value="#{userWizard.user.birthday}" />
+
+                                    <h:outputText value="Email: " />
+                                    <p:inputText value="#{userWizard.user.email}" />
+
+                                    <h:outputText value="Skip to last: " />
+                                    <h:selectBooleanCheckbox value="#{userWizard.skip}" />
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+                        
+                        <p:tab id="address" title="Address">
+                            <p:panel header="Address Details">
+                                <p:messages />
+                                <h:panelGrid columns="2" columnClasses="label, value">
+                                    <h:outputText value="Zip Code: " />
+                                    <p:inputText value="#{userWizard.user.zipcode}" />
+
+                                    <h:outputText value="Country: " />
+                                    <p:inputText value="#{userWizard.user.country}" />
+
+                                    <h:outputText value="Adress: " />
+                                    <p:inputText value="#{userWizard.user.adress}" />
+
+                                    <h:outputText value="City: " />
+                                    <p:inputText value="#{userWizard.user.adress}" />
+
+                                    <h:outputText value="State: " />
+                                    <p:inputText value="#{userWizard.user.adress}" />
+
+                                    <h:outputText value="Skip to last: " />
+                                    <h:selectBooleanCheckbox value="#{userWizard.skip}" />
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+
+
+                         <p:tab id="room" title="Room Selection">
+                            <p:panel header="Room Selection">
+                                <p:messages />
+                                <h:panelGrid columns="3" columnClasses="label, value">
+                                    <h:outputText value="Selecione o número do quarto: *" />
+                                    <p:inputText value="#{userWizard.user.roomNumber}" required="true" label="Email"/>
+
+                                    <h:outputText value="Selecion a dimensão do quarto(10m²,20m²,40m²: " />
+                                    <p:inputText value="#{userWizard.user.dimensionRoom}"/>
+
+                                    <h:outputText value="Informações adicionais para o quarto: " />
+                                    <p:inputText value="#{userWizard.user.info}"/>
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+
+                        <p:tab id="reservation" title="Reservation">
+                            <p:panel header="Reservation Selection">
+                                <p:messages />
+                                <h:panelGrid columns="2" columnClasses="label, value">
+                                    <h:outputText value="Number of guests?: " />
+                                    <p:inputText value="#{userWizard.user.numberGuests}" required="true"/>
+
+                                    <h:outputText value="Entre com o dia da sua Reserva: " />
+                                    <p:inputText value="#{userWizard.user.reservationDate}"/>
+
+                                     <h:outputText value="Entre com a data do seu Check-in: " />
+                                    <p:inputText value="#{userWizard.user.checkIn}"/>
+
+                                     <h:outputText value="Entre com a data do seu Check-out: " />
+                                    <p:inputText value="#{userWizard.user.checkOut}"/>
+
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+
+                        <p:tab id="confirm" title="Confirmation">
+                            <p:panel header="Confirmation">
+                                <h:panelGrid id="confirmation" columns="3" columnClasses="grid,grid,grid">
+                                    <h:panelGrid columns="2" columnClasses="label, value">
+                                        <h:outputText value="Firstname: " />
+                                        <h:outputText value="#{userWizard.user.firstName}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="Lastname: " />
+                                        <h:outputText value="#{userWizard.user.lastName}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="Age: " />
+                                        <h:outputText value="#{userWizard.user.age}" styleClass="outputLabel"/>
+                                    </h:panelGrid>
+
+                                    <h:panelGrid columns="2" columnClasses="label, value">
+                                            <h:outputText value="Email: " />
+                                        <h:outputText value="#{userWizard.user.email}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="Adress: " />
+                                        <h:outputText value="#{userWizard.user.adress}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="Zipcode: " />
+                                        <h:outputText value="#{userWizard.user.zipcode}" styleClass="outputLabel"/>
+                                    </h:panelGrid>
+
+                                    <h:panelGrid columns="2" columnClasses="label, value">
+                                        <h:outputText value="Country: " />
+                                        <h:outputText value="#{userWizard.user.country}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="Title " />
+                                        <h:outputText value="#{userWizard.user.title}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="City: " />
+                                        <h:outputText value="#{userWizard.user.city}" styleClass="outputLabel"/>
+
+                                    </h:panelGrid>
+
+                                        <h:panelGrid columns="2" columnClasses="label, value">
+                                            <h:outputText value="State: " />
+                                        <h:outputText value="#{userWizard.user.state}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="Birthday: " />
+                                        <h:outputText value="#{userWizard.user.birthday}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="Room Number: " />
+                                        <h:outputText value="#{userWizard.user.roomNumber}" styleClass="outputLabel"/>
+                                    </h:panelGrid>
+
+                                    <h:panelGrid columns="2" columnClasses="label, value">
+                                        <h:outputText value="Dimension Room: " />
+                                        <h:outputText value="#{userWizard.user.dimensionRoom}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="Info: " />
+                                        <h:outputText value="#{userWizard.user.info}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="Number of Guests: " />
+                                        <h:outputText value="#{userWizard.user.numberGuests}" styleClass="outputLabel"/>
+                                    </h:panelGrid>
+
+                                    <h:panelGrid columns="2" columnClasses="label, value">
+                                        <h:outputText value="Reservation Date: " />
+                                        <h:outputText value="#{userWizard.user.reservationDate}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="Check-in: " />
+                                        <h:outputText value="#{userWizard.user.checkIn}" styleClass="outputLabel"/>
+
+                                        <h:outputText value="Check-out: " />
+                                        <h:outputText value="#{userWizard.user.checkOut}" styleClass="outputLabel"/>
+                                    </h:panelGrid>
+
+                                </h:panelGrid>
+
+                                <p:commandButton value="Submit" action="#{userWizard.save}" update="growl" process="@this"/>
+                            </p:panel>
+                        </p:tab>
+                    </p:wizard>
+                     </h:form>
+
                 <p>
                     In this main area we would put our main text, images, forms, etc.
                 </p>
@@ -53,6 +223,7 @@
                         </p:menuitem>
                     </p:tabMenu>             
                 </p>
+
             </ui:define>
 
         </ui:composition>
