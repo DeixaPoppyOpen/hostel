@@ -12,33 +12,34 @@
                 <h2>Welcome to our Site</h2>
             </ui:define>
 
-            <ui:define name="left">
-                <h3>Links</h3>
-                <u1>
-                    <li>
-                        <h:outputLink value="https://youtu.be/z0xHep1R0UE?list=PLZuYFm90gG3xKEwgiW-uJhE-xC89mGU1T">
-                            <h:outputText value="Packt Publishing"/>
-                        </h:outputLink>
-                    </li>
+            <h:form>
+                <ui:define name="left">
+                    <h3>Links</h3>
+                    <u1>
+                        <li>
+                            <h:outputLink value="https://youtu.be/z0xHep1R0UE?list=PLZuYFm90gG3xKEwgiW-uJhE-xC89mGU1T">
+                                <h:outputText value="Packt Publishing"/>
+                            </h:outputLink>
+                        </li>
 
-                    <li>
-                        <h:outputLink value="https://discordapp.com/">
-                            <h:outputText value="Discord"/>
-                        </h:outputLink>    
-                    </li>
+                        <li>
+                            <h:outputLink value="https://discordapp.com/">
+                                <h:outputText value="Discord"/>
+                            </h:outputLink>    
+                        </li>
 
-                    <li>
-                        <h:outputLink value="menu.xhtml">
-                            <h:outputText value="Cordelia"/>
-                        </h:outputLink>    
-                    </li>
-                </u1>
-            </ui:define>
-
+                        <li>
+                            <h:outputLink value="menu.xhtml">
+                                <h:outputText value="Cordelia"/>
+                            </h:outputLink>    
+                        </li>
+                    </u1>
+                </ui:define>
+            </h:form>
             <ui:define name="content">
 
-                 <p:growl id="growl" sticky="true" showDetail="true"/>
-                 <h:form>
+                <p:growl id="growl" sticky="true" showDetail="true"/>
+                <h:form>
                     <p:wizard flowListener="#{userWizard.onFlowProcess}">
                         <p:tab id="customer" title="Customer Details">
                             <p:panel header="Customer Details">
@@ -64,7 +65,7 @@
                                 </h:panelGrid>
                             </p:panel>
                         </p:tab>
-                        
+
                         <p:tab id="address" title="Address">
                             <p:panel header="Address Details">
                                 <p:messages />
@@ -91,7 +92,7 @@
                         </p:tab>
 
 
-                         <p:tab id="room" title="Room Selection">
+                        <p:tab id="room" title="Room Selection">
                             <p:panel header="Room Selection">
                                 <p:messages />
                                 <h:panelGrid columns="3" columnClasses="label, value">
@@ -117,10 +118,10 @@
                                     <h:outputText value="Entre com o dia da sua Reserva: " />
                                     <p:inputText value="#{userWizard.user.reservationDate}"/>
 
-                                     <h:outputText value="Entre com a data do seu Check-in: " />
+                                    <h:outputText value="Entre com a data do seu Check-in: " />
                                     <p:inputText value="#{userWizard.user.checkIn}"/>
 
-                                     <h:outputText value="Entre com a data do seu Check-out: " />
+                                    <h:outputText value="Entre com a data do seu Check-out: " />
                                     <p:inputText value="#{userWizard.user.checkOut}"/>
 
                                 </h:panelGrid>
@@ -142,7 +143,7 @@
                                     </h:panelGrid>
 
                                     <h:panelGrid columns="2" columnClasses="label, value">
-                                            <h:outputText value="Email: " />
+                                        <h:outputText value="Email: " />
                                         <h:outputText value="#{userWizard.user.email}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Adress: " />
@@ -164,8 +165,8 @@
 
                                     </h:panelGrid>
 
-                                        <h:panelGrid columns="2" columnClasses="label, value">
-                                            <h:outputText value="State: " />
+                                    <h:panelGrid columns="2" columnClasses="label, value">
+                                        <h:outputText value="State: " />
                                         <h:outputText value="#{userWizard.user.state}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Birthday: " />
@@ -203,25 +204,27 @@
                             </p:panel>
                         </p:tab>
                     </p:wizard>
-                     </h:form>
+                </h:form>
 
                 <p>
                     In this main area we would put our main text, images, forms, etc.
                 </p>
                 <p>
-                    <p:tabMenu activeIndex="#{tabMenuManagedBean.index}">
-                        <p:menuitem>
-                            <h:outputLink value="https://google.com">
-                             <h:outputText value="google"/>
+                    <h:form>
+                        <p:tabMenu activeIndex="#{tabMenuManagedBean.index}">
+                            <p:menuitem>
+                                <h:outputLink value="https://google.com">
+                                    <h:outputText value="google"/>
 
-                            </h:outputLink>
-                        </p:menuitem>
-                        <p:menuitem>
-                            <h:outputLink value="https://facebook.com">
-                                <h:outputText value="facebook"/>
-                            </h:outputLink>
-                        </p:menuitem>
-                    </p:tabMenu>             
+                                </h:outputLink>
+                            </p:menuitem>
+                            <p:menuitem>
+                                <h:outputLink value="https://facebook.com">
+                                    <h:outputText value="facebook"/>
+                                </h:outputLink>
+                            </p:menuitem>
+                        </p:tabMenu> 
+                    </h:form>
                 </p>
 
             </ui:define>
