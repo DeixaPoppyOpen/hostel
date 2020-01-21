@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <body>
         <ui:composition template="template.xhtml">
 
@@ -24,10 +25,10 @@
                             <h:outputText value="Discord"/>
                         </h:outputLink>    
                     </li>
-                    
+
                     <li>
-                        <h:outputLink value="https://gamepress.gg/feheroes/hero/cordelia/">
-                        <h:outputText value="Cordelia"/>
+                        <h:outputLink value="menu.xhtml">
+                            <h:outputText value="Cordelia"/>
                         </h:outputLink>    
                     </li>
                 </u1>
@@ -38,7 +39,19 @@
                     In this main area we would put our main text, images, forms, etc.
                 </p>
                 <p>
-                    Lorem ipsum eleifend donec pretium varius aliquam himenaeos ullamcorper sed malesuada sollicitudin imperdiet, urna lacus eleifend mi ultricies eleifend feugiat mattis blandit elit. sagittis dolor tellus et aliquet aliquam lectus euismod pulvinar rutrum, turpis ante cursus fringilla inceptos porta vivamus inceptos non vulputate, sagittis aenean praesent laoreet donec dui lacinia bibendum. congue tellus cubilia suscipit taciti fermentum velit purus mi quam ut condimentum turpis, luctus consequat morbi pretium dui nulla arcu nulla ac consectetur curae tortor, aliquam leo metus tortor habitant fringilla volutpat accumsan sociosqu felis posuere. duis nullam molestie ullamcorper taciti aenean magna inceptos congue dictumst convallis commodo at, sollicitudin curae facilisis ullamcorper tortor erat ut sem nunc lorem nam.                  
+                    <p:tabMenu activeIndex="#{tabMenuManagedBean.index}">
+                        <p:menuitem>
+                            <h:outputLink value="https://google.com">
+                             <h:outputText value="google"/>
+
+                            </h:outputLink>
+                        </p:menuitem>
+                        <p:menuitem>
+                            <h:outputLink value="https://facebook.com">
+                                <h:outputText value="facebook"/>
+                            </h:outputLink>
+                        </p:menuitem>
+                    </p:tabMenu>             
                 </p>
             </ui:define>
 
