@@ -4,11 +4,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
-    <head>
-        <title>
-            fodase
-        </title>
-    </head>
+
     <body>
         <ui:composition template="template.xhtml">
 
@@ -30,16 +26,17 @@
                             <h:outputText value="Discord"/>
                         </h:outputLink>    
                     </li>
-                    
+
                     <li>
-                        <h:outputLink value="https://gamepress.gg/feheroes/hero/cordelia/">
-                        <h:outputText value="Cordelia"/>
+                        <h:outputLink value="menu.xhtml">
+                            <h:outputText value="Cordelia"/>
                         </h:outputLink>    
                     </li>
                 </u1>
             </ui:define>
 
             <ui:define name="content">
+
                  <p:growl id="growl" sticky="true" showDetail="true"/>
                  <h:form>
                     <p:wizard flowListener="#{userWizard.onFlowProcess}">
@@ -207,6 +204,26 @@
                         </p:tab>
                     </p:wizard>
                      </h:form>
+
+                <p>
+                    In this main area we would put our main text, images, forms, etc.
+                </p>
+                <p>
+                    <p:tabMenu activeIndex="#{tabMenuManagedBean.index}">
+                        <p:menuitem>
+                            <h:outputLink value="https://google.com">
+                             <h:outputText value="google"/>
+
+                            </h:outputLink>
+                        </p:menuitem>
+                        <p:menuitem>
+                            <h:outputLink value="https://facebook.com">
+                                <h:outputText value="facebook"/>
+                            </h:outputLink>
+                        </p:menuitem>
+                    </p:tabMenu>             
+                </p>
+
             </ui:define>
 
         </ui:composition>
