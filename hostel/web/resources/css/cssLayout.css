@@ -1,10 +1,11 @@
 
 #top {
     position: relative;
-    background-color: #036fab;
-    color: white;
-    padding: 5px;
-    margin: 0px 0px 10px 0px;
+    background-color: lightblue;
+    color: lightblue;
+    padding: 0px;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
 }
 
 #bottom {
@@ -16,9 +17,10 @@
 
 #left {
     float: left;
-    background-color: #ece3a5;
-    padding: 5px;
+    background-color: lightblue;
+    padding: 0px;
     width: 150px;
+    height: 100%;
 }
 
 #right {
@@ -56,6 +58,13 @@
   color: black;
   font-weight : bold;
   text-decoration : underline;
+}
+
+.menu
+{
+    white-space: nowrap;
+    height:  800px !important;
+    width: 100% !important;
 }
 
 

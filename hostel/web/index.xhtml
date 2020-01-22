@@ -9,33 +9,23 @@
         <ui:composition template="template.xhtml">
 
             <ui:define name="top">
-                <h2>Welcome to our Site</h2>
+                <p:graphicImage value="Hostel_Logo.png" width="100%" height="150px"/>
             </ui:define>
 
-            <h:form>
-                <ui:define name="left">
-                    <h3>Links</h3>
-                    <u1>
-                        <li>
-                            <h:outputLink value="https://youtu.be/z0xHep1R0UE?list=PLZuYFm90gG3xKEwgiW-uJhE-xC89mGU1T">
-                                <h:outputText value="Packt Publishing"/>
-                            </h:outputLink>
-                        </li>
 
-                        <li>
-                            <h:outputLink value="https://discordapp.com/">
-                                <h:outputText value="Discord"/>
-                            </h:outputLink>    
-                        </li>
+            <ui:define name="left">
+                <h:form class="left">
+                    <p:menu class="menu">
+                        <p:submenu label="Menu">
+                            <p:menuitem value="Register" url="http://www.primefaces.org" icon="pi pi-home"/>
+                            <p:menuitem value="Login" icon="pi pi-star"/>
+                            <p:menuitem value="Reservation" icon="pi pi-star"/>
+                            <p:menuitem value="Query" icon="pi pi-star"/>
+                        </p:submenu>
+                    </p:menu>
+                </h:form>
+            </ui:define>
 
-                        <li>
-                            <h:outputLink value="menu.xhtml">
-                                <h:outputText value="Cordelia"/>
-                            </h:outputLink>    
-                        </li>
-                    </u1>
-                </ui:define>
-            </h:form>
             <ui:define name="content">
 
                 <p:growl id="growl" sticky="true" showDetail="true"/>
@@ -213,7 +203,7 @@
                     <h:form>
                         <p:tabMenu activeIndex="#{tabMenuManagedBean.index}">
                             <p:menuitem>
-                                <h:outputLink value="https://google.com">
+                                <h:outputLink value="home.xhtml">
                                     <h:outputText value="google"/>
 
                                 </h:outputLink>
