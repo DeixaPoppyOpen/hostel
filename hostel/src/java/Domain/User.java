@@ -17,6 +17,34 @@ import java.time.LocalDate;
 public class User implements Serializable {
 
     /**
+     * @return the checkIn
+     */
+    public LocalDate getCheckIn() {
+        return checkIn;
+    }
+
+    /**
+     * @param checkIn the checkIn to set
+     */
+    public void setCheckIn(LocalDate checkIn) {
+        this.checkIn = checkIn;
+    }
+
+    /**
+     * @return the checkOut
+     */
+    public LocalDate getCheckOut() {
+        return checkOut;
+    }
+
+    /**
+     * @param checkOut the checkOut to set
+     */
+    public void setCheckOut(LocalDate checkOut) {
+        this.checkOut = checkOut;
+    }
+
+    /**
      * @return the reservationDate
      */
     public LocalDate getReservationDate() {

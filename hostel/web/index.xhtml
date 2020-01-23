@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
         <ui:composition template="template.xhtml">
@@ -42,14 +43,15 @@
                                     <p:inputText value="#{userWizard.user.lastName}" required="true" label="Lastname"/>
 
                                     <h:outputText value="Age: " />
-                                    <p:inputText value="#{userWizard.user.age}" />
+                                    <p:inputText value="#{userWizard.user.age}" required="true"/>
 
                                     <h:outputText value="Birthday: " />
-                                    <p:inputText value="#{userWizard.user.birthday}" />
+                                    <p:inputText value="#{userWizard.user.birthday}" required="true" />
 
                                     <h:outputText value="Email: " />
-                                    <p:inputText value="#{userWizard.user.email}" />
-
+                                    <p:inputText value="#{userWizard.user.email}" required="true" >
+                                        <f:validator validatorId="emailValidator"/>
+                                    </p:inputText>
                                     <h:outputText value="Skip to last: " />
                                     <h:selectBooleanCheckbox value="#{userWizard.skip}" />
                                 </h:panelGrid>
@@ -61,19 +63,19 @@
                                 <p:messages />
                                 <h:panelGrid columns="2" columnClasses="label, value">
                                     <h:outputText value="Zip Code: " />
-                                    <p:inputText value="#{userWizard.user.zipcode}" />
+                                    <p:inputText value="#{userWizard.user.zipcode}" required="true"/>
 
                                     <h:outputText value="Country: " />
-                                    <p:inputText value="#{userWizard.user.country}" />
+                                    <p:inputText value="#{userWizard.user.country}" required="true"/>
 
                                     <h:outputText value="Adress: " />
-                                    <p:inputText value="#{userWizard.user.adress}" />
+                                    <p:inputText value="#{userWizard.user.adress}" required="true" />
 
                                     <h:outputText value="City: " />
-                                    <p:inputText value="#{userWizard.user.adress}" />
+                                    <p:inputText value="#{userWizard.user.city}" required="true"/>
 
                                     <h:outputText value="State: " />
-                                    <p:inputText value="#{userWizard.user.adress}" />
+                                    <p:inputText value="#{userWizard.user.state}" required="true"/>
 
                                     <h:outputText value="Skip to last: " />
                                     <h:selectBooleanCheckbox value="#{userWizard.skip}" />
@@ -87,10 +89,10 @@
                                 <p:messages />
                                 <h:panelGrid columns="3" columnClasses="label, value">
                                     <h:outputText value="Selecione o número do quarto: *" />
-                                    <p:inputText value="#{userWizard.user.roomNumber}" required="true" label="Email"/>
+                                    <p:inputText value="#{userWizard.user.roomNumber}" required="true" label="Email" />
 
                                     <h:outputText value="Selecion a dimensão do quarto(10m²,20m²,40m²: " />
-                                    <p:inputText value="#{userWizard.user.dimensionRoom}"/>
+                                    <p:inputText value="#{userWizard.user.dimensionRoom}" required="true"/>
 
                                     <h:outputText value="Informações adicionais para o quarto: " />
                                     <p:inputText value="#{userWizard.user.info}"/>
@@ -106,13 +108,13 @@
                                     <p:inputText value="#{userWizard.user.numberGuests}" required="true"/>
 
                                     <h:outputText value="Entre com o dia da sua Reserva: " />
-                                    <p:inputText value="#{userWizard.user.reservationDate}"/>
+                                    <p:inputText value="#{userWizard.user.reservationDate}" required="true"/>
 
                                     <h:outputText value="Entre com a data do seu Check-in: " />
-                                    <p:inputText value="#{userWizard.user.checkIn}"/>
+                                    <p:inputText value="#{userWizard.user.checkIn}" required="true"/>
 
                                     <h:outputText value="Entre com a data do seu Check-out: " />
-                                    <p:inputText value="#{userWizard.user.checkOut}"/>
+                                    <p:inputText value="#{userWizard.user.checkOut}" required="true"/>
 
                                 </h:panelGrid>
                             </p:panel>
