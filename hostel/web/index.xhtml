@@ -5,7 +5,9 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-
+        <head>
+            <title>Index</title>
+        </head>
     <body>
         <ui:composition template="template.xhtml">
 
@@ -31,172 +33,171 @@
 
                 <p:growl id="growl" sticky="true" showDetail="true"/>
                 <h:form>
-                    <p:wizard flowListener="#{userWizard.onFlowProcess}">
+                    <p:wizard flowListener="#{userController.onFlowProcess}">
+                       
                         <p:tab id="customer" title="Customer Details">
-                            <p:panel header="Customer Details">
-                                <p:messages />
+                            <p:panel header="Customer">
+                            <p:messages />
                                 <h:panelGrid columns="2" columnClasses="label, value">
                                     <h:outputText value="Firstname: *" />
-                                    <p:inputText value="#{userWizard.user.firstName}" required="true" label="Firstname"/>
+                                    <p:inputText value="#{userController.user.firstName}" required="true" label="Firstname"/>
 
                                     <h:outputText value="Lastname: *" />
-                                    <p:inputText value="#{userWizard.user.lastName}" required="true" label="Lastname"/>
+                                    <p:inputText value="#{userController.user.lastName}" required="true" label="Lastname"/>
 
                                     <h:outputText value="Age: " />
-                                    <p:inputText value="#{userWizard.user.age}" required="true"/>
+                                    <p:inputText value="#{userController.user.age}" required="true"/>
 
                                     <h:outputText value="Birthday: " />
-                                    <p:inputText value="#{userWizard.user.birthday}" required="true" />
+                                    <p:inputText value="#{userController.user.birthday}" required="true" />
 
                                     <h:outputText value="Email: " />
-                                    <p:inputText value="#{userWizard.user.email}" required="true" >
+                                    <p:inputText value="#{userController.user.email}" required="true" >
                                         <f:validator validatorId="emailValidator"/>
                                     </p:inputText>
                                     <h:outputText value="Skip to last: " />
-                                    <h:selectBooleanCheckbox value="#{userWizard.skip}" />
+                                    <h:selectBooleanCheckbox value="#{userController.skip}" />
                                 </h:panelGrid>
                             </p:panel>
                         </p:tab>
-
+                          
                         <p:tab id="address" title="Address">
-                            <p:panel header="Address Details">
-                                <p:messages />
+                              <p:panel header="Address">                                
+                            <p:messages />
                                 <h:panelGrid columns="2" columnClasses="label, value">
                                     <h:outputText value="Zip Code: " />
-                                    <p:inputText value="#{userWizard.user.zipcode}" required="true"/>
+                                    <p:inputText value="#{userController.user.zipcode}" required="true"/>
 
                                     <h:outputText value="Country: " />
-                                    <p:inputText value="#{userWizard.user.country}" required="true"/>
+                                    <p:inputText value="#{userController.user.country}" required="true"/>
 
                                     <h:outputText value="Adress: " />
-                                    <p:inputText value="#{userWizard.user.adress}" required="true" />
+                                    <p:inputText value="#{userController.user.adress}" required="true" />
 
                                     <h:outputText value="City: " />
-                                    <p:inputText value="#{userWizard.user.city}" required="true"/>
+                                    <p:inputText value="#{userController.user.city}" required="true"/>
 
                                     <h:outputText value="State: " />
-                                    <p:inputText value="#{userWizard.user.state}" required="true"/>
+                                    <p:inputText value="#{userController.user.state}" required="true"/>
 
                                     <h:outputText value="Skip to last: " />
-                                    <h:selectBooleanCheckbox value="#{userWizard.skip}" />
+                                    <h:selectBooleanCheckbox value="#{userController.skip}" />
                                 </h:panelGrid>
-                            </p:panel>
+                              </p:panel>
                         </p:tab>
 
 
                         <p:tab id="room" title="Room Selection">
-                            <p:panel header="Room Selection">
-                                <p:messages />
+                           <p:panel header="Room">        
+                            <p:messages />
                                 <h:panelGrid columns="3" columnClasses="label, value">
                                     <h:outputText value="Selecione o número do quarto: *" />
-                                    <p:inputText value="#{userWizard.user.roomNumber}" required="true" label="Email" />
+                                    <p:inputText value="#{userController.user.roomNumber}" required="true" label="Email" />
 
                                     <h:outputText value="Selecion a dimensão do quarto(10m²,20m²,40m²: " />
-                                    <p:inputText value="#{userWizard.user.dimensionRoom}" required="true"/>
+                                    <p:inputText value="#{userController.user.dimensionRoom}" required="true"/>
 
                                     <h:outputText value="Informações adicionais para o quarto: " />
-                                    <p:inputText value="#{userWizard.user.info}"/>
+                                    <p:inputText value="#{userController.user.info}"/>
                                 </h:panelGrid>
                             </p:panel>
                         </p:tab>
 
                         <p:tab id="reservation" title="Reservation">
-                            <p:panel header="Reservation Selection">
-                                <p:messages />
+                             <p:panel header="Reservation">   
+                            <p:messages />
                                 <h:panelGrid columns="2" columnClasses="label, value">
                                     <h:outputText value="Number of guests?: " />
-                                    <p:inputText value="#{userWizard.user.numberGuests}" required="true"/>
+                                    <p:inputText value="#{userController.user.numberGuests}" required="true"/>
 
                                     <h:outputText value="Entre com o dia da sua Reserva: " />
-                                    <p:inputText value="#{userWizard.user.reservationDate}" required="true"/>
+                                    <p:inputText value="#{userController.user.reservationDate}" required="true"/>
 
                                     <h:outputText value="Entre com a data do seu Check-in: " />
-                                    <p:inputText value="#{userWizard.user.checkIn}" required="true"/>
+                                    <p:inputText value="#{userController.user.checkIn}" required="true"/>
 
                                     <h:outputText value="Entre com a data do seu Check-out: " />
-                                    <p:inputText value="#{userWizard.user.checkOut}" required="true"/>
+                                    <p:inputText value="#{userController.user.checkOut}" required="true"/>
 
                                 </h:panelGrid>
                             </p:panel>
                         </p:tab>
 
                         <p:tab id="confirm" title="Confirmation">
-                            <p:panel header="Confirmation">
-                                <h:panelGrid id="confirmation" columns="3" columnClasses="grid,grid,grid">
+                            <p:panel header="Confirmation">    
+                            <h:panelGrid id="confirmation" columns="3" columnClasses="grid,grid,grid">
                                     <h:panelGrid columns="2" columnClasses="label, value">
                                         <h:outputText value="Firstname: " />
-                                        <h:outputText value="#{userWizard.user.firstName}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.firstName}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Lastname: " />
-                                        <h:outputText value="#{userWizard.user.lastName}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.lastName}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Age: " />
-                                        <h:outputText value="#{userWizard.user.age}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.age}" styleClass="outputLabel"/>
                                     </h:panelGrid>
 
                                     <h:panelGrid columns="2" columnClasses="label, value">
                                         <h:outputText value="Email: " />
-                                        <h:outputText value="#{userWizard.user.email}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.email}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Adress: " />
-                                        <h:outputText value="#{userWizard.user.adress}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.adress}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Zipcode: " />
-                                        <h:outputText value="#{userWizard.user.zipcode}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.zipcode}" styleClass="outputLabel"/>
                                     </h:panelGrid>
 
                                     <h:panelGrid columns="2" columnClasses="label, value">
                                         <h:outputText value="Country: " />
-                                        <h:outputText value="#{userWizard.user.country}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.country}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Title " />
-                                        <h:outputText value="#{userWizard.user.title}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.title}" styleClass="outputLabel"/>
 
                                         <h:outputText value="City: " />
-                                        <h:outputText value="#{userWizard.user.city}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.city}" styleClass="outputLabel"/>
 
                                     </h:panelGrid>
 
                                     <h:panelGrid columns="2" columnClasses="label, value">
                                         <h:outputText value="State: " />
-                                        <h:outputText value="#{userWizard.user.state}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.state}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Birthday: " />
-                                        <h:outputText value="#{userWizard.user.birthday}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.birthday}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Room Number: " />
-                                        <h:outputText value="#{userWizard.user.roomNumber}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.roomNumber}" styleClass="outputLabel"/>
                                     </h:panelGrid>
 
                                     <h:panelGrid columns="2" columnClasses="label, value">
                                         <h:outputText value="Dimension Room: " />
-                                        <h:outputText value="#{userWizard.user.dimensionRoom}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.dimensionRoom}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Info: " />
-                                        <h:outputText value="#{userWizard.user.info}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.info}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Number of Guests: " />
-                                        <h:outputText value="#{userWizard.user.numberGuests}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.numberGuests}" styleClass="outputLabel"/>
                                     </h:panelGrid>
 
                                     <h:panelGrid columns="2" columnClasses="label, value">
                                         <h:outputText value="Reservation Date: " />
-                                        <h:outputText value="#{userWizard.user.reservationDate}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.reservationDate}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Check-in: " />
-                                        <h:outputText value="#{userWizard.user.checkIn}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.checkIn}" styleClass="outputLabel"/>
 
                                         <h:outputText value="Check-out: " />
-                                        <h:outputText value="#{userWizard.user.checkOut}" styleClass="outputLabel"/>
+                                        <h:outputText value="#{userController.user.checkOut}" styleClass="outputLabel"/>
                                     </h:panelGrid>
-
                                 </h:panelGrid>
-
-                                <p:commandButton value="Submit" action="#{userWizard.save}" update="growl" process="@this"/>
-                            </p:panel>
+                            </p:panel>    
                         </p:tab>
+                        <p:commandButton value="Submit" action="#{userController.save()}" ajax="false"/>
                     </p:wizard>
-                </h:form>
+                
 
                 <p>
                     In this main area we would put our main text, images, forms, etc.
@@ -218,7 +219,7 @@
                         </p:tabMenu> 
                     </h:form>
                 </p>
-
+             </h:form>       
             </ui:define>
 
         </ui:composition>

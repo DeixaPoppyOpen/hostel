@@ -10,9 +10,9 @@ import org.primefaces.event.FlowEvent;
 
 
 
-@RequestScoped
+
 @Named
-public class UserWizard implements Serializable{
+public class UserController implements Serializable{
  
     private User user = new User();
      
